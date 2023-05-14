@@ -10,11 +10,10 @@ We'll Ubuntu 22.04.2 LTS.
 25GB disk
 
 2. Make sure git is installed
-
-
 ```
 sudo apt install git
 ```
+
 
 sudo apt install git
 3. Clone this repo
