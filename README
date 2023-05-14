@@ -1,0 +1,20 @@
+Hi! 
+This repo supports a handson training on configuring a log collector and SIEM.
+
+What you need to set up and get running before following along the hands-on demo.
+1. All demo's are in a Linux environment. Could work for Windows. To be sure install WSL with Ubuntu. We'll Ubuntu 22.04.2 LTS.
+2. Make sure git is installed
+sudo apt install git
+3. Clone this repo
+4. Install docker  
+https://docs.docker.com/engine/install/ubuntu/
+Make sure:  docker run hello-world:latest runs.
+5. Install docker-compose
+
+
+
+
+
+
+
+

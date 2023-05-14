@@ -1,0 +1,15 @@
+      - name: Ensure development tools are installed for Fluentbit Dev
+        ansible.builtin.apt:
+          name: '{{item}}'
+          state: latest
+        loop:
+          - ansible #Maybe missing ppa 
+          - cmake
+          - flex #"
+          - bison #"
+          - libyaml-dev #
+          - libssl-dev
+          - libsystemd-dev  
+          - pkg-config 
+
+

@@ -1,0 +1,11 @@
+[all:vars]
+ansible_user='ansible'
+ansible_ssh_user=ansible
+ansible_ssh_private_key_file=/home/abby/.ssh/id_rsa
+ansible_become=yes
+ansible_become_method=sudo
+ansible_python_interpreter='/usr/bin/env python3'
+
+
+[my_computers]
+localhost   

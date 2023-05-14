@@ -1,0 +1,51 @@
+- name: Update my computer
+  hosts: my_computes
+  remote_user: deploy
+  vars_files:
+    - secret
+
+  tasks:
+  - name: Ensure Fluentbit binary is installed
+    ansible.builtin.copy:  
+      src: ./fluent-bit
+      dest: /usr/bin/fluent-bit
+      owner: root
+      group: root
+      mode: u+rwx,g+rwx,o-rwx
+  - name: Ensure Fluentbit config files are installed / updated
+    ansible.builtin.copy:
+      src: '{{item}}'
+      dest: '/etc/fluent-bit/'
+      owner: root
+      group: root
+      mode: 0770
+    loop:
+       - ./fluent-bit.conf
+       - ./parsers.conf
+    
+  - name: Install/Update Fluentbit service
+    ansible.builtin.copy:
+      src: './fluent-bit.service'
+      dest: '/etc/systemd/system/fluent-bit.service'
+      owner: root
+      group: root
+      mode: 0644
+  
+  - name: No additional UFW messages in syslog
+    ansible.builtin.replace:
+      path: /etc/rsyslog.d/20-ufw.conf
+      regexp: '# & stop'
+      replace: '& stop'
+      backup: no
+
+  - name: restart service rsyslog
+    systemd:
+      state: restarted
+      daemon_reload: yes
+      name: rsyslog
+
+  - name: restart service Fluent-bit
+    systemd:
+      state: restarted
+      daemon_reload: yes
+      name: fluent-bit
