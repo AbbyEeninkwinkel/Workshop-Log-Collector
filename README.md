@@ -38,7 +38,7 @@ sudo apt -y install bison
 sudo apt -y install libyaml-dev
 sudo apt -y install libssl-dev
 sudo apt -y install libsystemd-dev  
-sudo apt -y pkg-config
+sudo apt -y install pkg-config
 ``` 
 
 Clone the Fluentbit repo:
