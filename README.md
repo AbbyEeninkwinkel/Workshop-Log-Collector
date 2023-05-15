@@ -73,15 +73,15 @@ cd ~/Workshop_Log_Collector/repo/
 The output should be something like this:
 ```
 Fluent Bit v2.1.3
-* Copyright (C) 2015-2022 The Fluent Bit Authors
-* Fluent Bit is a CNCF sub-project under the umbrella of Fluentd
-* https://fluentbit.io
+** Copyright (C) 2015-2022 The Fluent Bit Authors
+** Fluent Bit is a CNCF sub-project under the umbrella of Fluentd
+** https://fluentbit.io
 
-[2023/05/15 21:20:07] [ info] [fluent bit] version=2.1.3, commit=6ae59962d6, pid=16301
-[2023/05/15 21:20:07] [ info] [storage] ver=1.4.0, type=memory, sync=normal, checksum=off, max_chunks_up=128
-[2023/05/15 21:20:07] [ info] [cmetrics] version=0.6.1
-[2023/05/15 21:20:07] [ info] [ctraces ] version=0.3.0
-[2023/05/15 21:20:07] [ info] [sp] stream processor started
+[2023/05/15 21:20:07] [ info] [fluent bit] version=2.1.3, commit=6ae59962d6, pid=16301<br>
+[2023/05/15 21:20:07] [ info] [storage] ver=1.4.0, type=memory, sync=normal, checksum=off, max_chunks_up=128<br>
+[2023/05/15 21:20:07] [ info] [cmetrics] version=0.6.1<br>
+[2023/05/15 21:20:07] [ info] [ctraces ] version=0.3.0<br>
+[2023/05/15 21:20:07] [ info] [sp] stream processor started<br>
 ```
 Ctlr-C wil stop her.
 
