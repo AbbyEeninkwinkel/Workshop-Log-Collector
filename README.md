@@ -6,7 +6,7 @@ What you need to set up and get running before following along the hands-on demo
 For WIndows: use WSL with Ubuntu. 
 We'll Ubuntu 22.04.2 LTS.
 4096MB
-2 CPU
+2 CPU 
 25GB disk
 
 2. Make sure git is installed
