@@ -1,5 +1,6 @@
-Hi! 
-This repo supports a handson training on configuring a log collector and SIEM.
+Hi!<br>
+<br> 
+This repo supports a handson training on configuring a log collector and SIEM.<br>
 <br>
 Disclaimer: This is a walkthrough handson demo. You must make you own judgement about safely instally and running code download from the web. <br>
 <br>
