@@ -31,6 +31,7 @@ Make sure:  docker run hello-world:latest runs.
 7. Install all build tools and requirements.
 
 ``` 
+sudo apt update
 sudo apt -y install cmake
 sudo apt -y install flex
 sudo apt -y install bison 
