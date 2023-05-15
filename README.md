@@ -17,9 +17,11 @@ We'll Ubuntu 22.04.2 LTS.
 sudo apt install git
 ```
 
-
-sudo apt install git
 3. Clone this repo
+Find the http link on this page.<br> 
+```
+git clone <https://.....>
+```
 4. Install docker  
 https://docs.docker.com/engine/install/ubuntu/
 Make sure:  docker run hello-world:latest runs.
@@ -39,6 +41,7 @@ sudo apt -y install libyaml-dev
 sudo apt -y install libssl-dev
 sudo apt -y install libsystemd-dev  
 sudo apt -y install pkg-config
+sudo apt -y install g++
 ``` 
 
 Clone the Fluentbit repo:
@@ -49,10 +52,16 @@ Clone the Fluentbit repo:
 $ cd build
 $ make
 ```
-optineel:
+Skip the "make install" step <b>
+We'll demonstrate this with Ansible, later on. <br>
+<br>
+
+Copy the fluent-bit binary you jsut made to to the repo folder wher eyoud this repository.
+
 ```
-$ make install
+cp ~/fluent-bit/build/bin/fluent-bit ~/Workshop-Log-Collector/repo/
 ```
+
 
 
 
