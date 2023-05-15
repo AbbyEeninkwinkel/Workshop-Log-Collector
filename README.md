@@ -45,8 +45,15 @@ Clone the Fluentbit repo:
 ```
  git clone https://github.com/fluent/fluent-bit
 ```
+`` 
+$ cd build
+$ make
+```
+optineel:
+```
+$ make install
+```
 
-In
 
 
 
