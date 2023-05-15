@@ -1,6 +1,8 @@
 Hi! 
 This repo supports a handson training on configuring a log collector and SIEM.
-
+<br>
+Disclaimer: This is a walkthrough handson demo. You must make you own judgement about safely instally and running code download from the web. <br>
+<br>
 What you need to set up and get running before following along the hands-on demo.
 1. All demo's are in a virtual Linux environment. 
 For WIndows: use WSL with Ubuntu. 
@@ -24,9 +26,27 @@ Make sure:  docker run hello-world:latest runs.
 
 
 
-6, fluent build and install
+6. fluent build and install
+7. Install all build tools and requirements.
 
+``` 
+sudo apt -y install cmake
+sudo apt -y install flex
+sudo apt -y install bison 
+sudo apt -y install libyaml-dev
+sudo apt -y install libssl-dev
+sudo apt -y install libsystemd-dev  
+sudo apt -y pkg-config
+``` 
+
+Clone the Fluentbit repo:
+```
  git clone https://github.com/fluent/fluent-bit
+```
+
+In
+
+
 
 https://docs.fluentbit.io/manual/installation/sources/build-and-install
 
