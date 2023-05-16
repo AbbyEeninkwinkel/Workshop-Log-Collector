@@ -121,6 +121,14 @@ You should see:<br>
 ```
 Docker Compose version v2.17.3
 ```
+<br>
+Play with docker-compose and get a demo website running.<br>
+See this nice tutorial:<br>
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04#step-1-installing-docker-compose
+<br>
+
+
+
 
 
 
