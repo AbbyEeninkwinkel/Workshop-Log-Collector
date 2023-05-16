@@ -4,17 +4,15 @@ services:
   mongodb:
     image: mongo:5.0.0
   #DB in share for persistence
-    volumes:
-#       - vol_mongodb:/data/db
-      - /var/logging/mongodb:/data/db
+  #    volumes:
+  #    - /home/abby/logging/mongodb:/data/db
   # Elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/6.6/docker.html
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2
 #    container_name: elasticsearch
     #data folder in share for persistence
-    volumes:
-#       - vol_elastic:/usr/share/elasticsearch/data
-      - /var/logging/elasticsearch:/usr/share/elasticsearch/data
+    #    volumes:
+    #  - /home/abby/logging/elasticsearch:/usr/share/elasticsearch/data
     environment:
       - http.host=0.0.0.0
       - TZ=Europe/Amsterdam
@@ -35,11 +33,9 @@ services:
     user: 1100:1100
 #    container_name: graylog
     #journal and config directories in local NFS share for persistence
-    volumes:
-#       - vol_graylog_1:/usr/share/graylog/data/journal
-#       - vol_graylog_2:/usr/share/graylog/data/config
-      - /var/logging/graylog/journal:/usr/share/graylog/data/journal
-      - /var/logging/graylog/config:/usr/share/graylog/data/config
+#    volumes:
+#      - /home/abby/logging/graylog/journal:/usr/share/graylog/data/journal
+#      - /home/abby/logging/graylog/config:/usr/share/graylog/data/config
 
     environment:
       # CHANGE ME (must be at least 16 characters)!
@@ -48,7 +44,7 @@ services:
       - TZ=Europe/Amsterdam
 #      - GRAYLOG_ROOT_TIMEZONE=UTC
       - GRAYLOG_ROOT_TIMEZONE=Europe/Amsterdam
-      - GRAYLOG_ROOT_PASSWORD_SHA2=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx
+      - GRAYLOG_ROOT_PASSWORD_SHA2=3caa4ecb66975caabf9810540eebca0bd830e8df6fba97574cda3cf6a2505bd0
       - GRAYLOG_HTTP_BIND_ADDRESS=0.0.0.0:7555
       - GRAYLOG_HTTP_EXTERNAL_URI=http://192.168.10.152:7555/
       - GRAYLOG_TRANSPORT_EMAIL_WEB_INTERFACE_URL=http://192.168.10.152:7555
