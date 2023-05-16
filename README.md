@@ -95,5 +95,35 @@ Fluent Bit v2.1.3
 
 
 
+<b> Install Docker compose </b>
+We'll require Docker Compsoe to deploy de Graylog environment in a pretty an easy way.<br>
+The Ubuntu repository contains docker-composer but it's quite outdated so we'll get the latest<br>
+<br>
+We'll go for a newer version.<br>
+For poduction systems I don't recommend add docker pgp repositories to apt for many reasons one being thay you don't want logging systems to be compromised by wrong deployments or potentially buggy new releases. Anyway as alway it depends.<br>
+For now we'll get a fixed version. <br> 
+Check https://github.com/docker/compose/releases for a recent version.<br>
+```
+mkdir -p ~/.docker/cli-plugins
+chmod 700 ~/.docker/cli-plugins
+# X86 platform
+curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o ~/.docker/
+cli-plugins/docker-compose
+# Apple M1 platform
+curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-aarch64 -o ~/.docker/cli-plugins/docker-compose
+
+chmod 700 ~/.docker/cli-plugins/docker-compose
+echo 'PATH=$PATH:~/.docker/cli-plugins/' >> ~/.bashrc
+cd ~
+docker-compose -v
+```
+You should see:<br>
+```
+Docker Compose version v2.17.3
+```
+
+
+
+
 
 
