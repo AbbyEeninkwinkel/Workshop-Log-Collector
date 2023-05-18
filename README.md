@@ -4,6 +4,8 @@ This repo supports a handson training on configuring a log collector and SIEM.<b
 <br>
 Disclaimer: This is a walkthrough handson demo. You must make you own judgement about safely instally and running code download from the web. <br>
 <br>
+<img src="web_assets/Overview_01.png">
+<br>
 What you need to set up and get running before following along the hands-on demo.
 1. All demo's are in a virtual Linux environment. 
 For WIndows: use WSL with Ubuntu. 
