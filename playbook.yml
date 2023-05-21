@@ -1,5 +1,5 @@
 - name: Update my computer
-  hosts: my_computes
+  hosts: my_computers
   remote_user: deploy
   vars_files:
     - secret

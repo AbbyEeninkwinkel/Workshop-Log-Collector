@@ -223,6 +223,13 @@ Tip: If the network of the VM is bridged with th host the webbrowser may be that
 Note: This version does not maintain settings you make in Graylog!
 <br><br>
 Great! You made it with the install. <br><br>
+
+8. Install ansible - optional - I hope to add to this part later.
+
+If we have time left we'll use ansible to deploy the logcollector to the VM.<br>
+Install Ansible on host and create ansible user on the VM.<br>
+<br>
+
 For further exploration: <br>
 - Read the documents on our logcollectors on our company sites <br>
 - Read the FluentBit website <br>
