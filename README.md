@@ -135,6 +135,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 6. Fluent build and install</b>
 
 Basically we'll follow https://docs.fluentbit.io/manual/installation/sources/build-and-install <br>
+in the steps below.<br>
 
 6.1. Install all build tools and requirements.
 
@@ -161,7 +162,7 @@ $ cd build
 $ make
 ```
 
-Skip the "make install" step <b>
+Skip the "make install" step. <br>
 We'll might demonstrate this with Ansible, later on. <br>
 <br>
 Copy the fluent-bit binary you just made to the repo folder where you cloned this repository.
