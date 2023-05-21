@@ -10,21 +10,22 @@ Disclaimer: This is a walkthrough hands-on demo for experts. You must make you o
 This page will help you get started fast. <br>
 We'll get the following up and running before following along the hands-on demo:<br>
 - 1 Linux Ubuntu VM
-- installed git
-- installed and tested podman
-- clone this repo
-- installed and tested docker-compose 
+- install git
+- install and test podman
+- clone this rep
+- install and test docker-compose 
 - clone, build, run and test fluentbit
 - launch Graylog, MongoDB and Elastic Search
 
 1. All demo's are in a virtual Linux environment. 
 
-For WIndows: use WSL with Ubuntu. <br>
-We'll use a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
+For Windows: use WSL with Ubuntu. <br>
+We'll use an Ubuntu 22.04.2 LTS images based VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
 
 2. Make sure git is installed
 
 ```
+sudo apt update
 sudo apt install git
 ```
 
@@ -52,18 +53,18 @@ Make sure everything works:
 
 ```
 podman run hello-world:latest
-or
+or 
 sudo docker run hello-world:latest
 ```
 
 5. Install docker-compose<br>
 
 We'll require Docker Compose to deploy the Graylog environment in a pretty easy way.<br>
-The Ubuntu repository contains docker-composer but it's quite outdated.<br>
+The Ubuntu repository contains docker-compose but it's quite outdated.<br>
 <br>
 We'll go for a newer version.<br>
 (Short cut: with the docker-compose version in Ubuntu you'll probably be fine for the demo: sudo apt install docker-compose)<br>
-Note: For production systems I don't recommend to add docker pgp repositories to apt for many reasons one being that you don't want logging systems to be compromised by wrong deployments or new releases with changed functionality. <br>
+Note: For production systems I don't recommend to add docker pgp repositories to apt for many reasons, one being that you don't want logging systems to be compromised by wrong deployments or new releases with changed functionality. <br>
 Anyway as always "it depends".<br>
 For now we'll get a fixed version. <br> 
 Check https://github.com/docker/compose/releases for a recent version.<br>
@@ -132,7 +133,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 <br>
 <br>
 
-6. Fluent build and install</b>
+6. Fluentbit build and install</b>
 
 Basically we'll follow https://docs.fluentbit.io/manual/installation/sources/build-and-install <br>
 in the steps below.<br>
@@ -156,6 +157,9 @@ Clone the Fluentbit repo:
 ```
  git clone https://github.com/fluent/fluent-bit
 ```
+
+Make the necessary files:<br>
+
 
 ``` 
 $ cd build
@@ -197,7 +201,7 @@ Ctlr-C will stop her. <br>
 
 7. Almost ready! Let get Graylog running
 
-Creates you own Admin password:
+Create you own Admin password:
 
 ```
 echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
@@ -221,7 +225,7 @@ If all goes well you'll find the login of Graylog with a browser at <br>
 ```
 http://localhost:7555/gettingstarted
 ```
-Tip: If the network of the VM is bridged with the host the webbrowser may be that of the host. <br>
+Tip: If the network of the VM is bridged with the host, the web browser may be that of the host. <br>
 Note: This version does not retain settings you make in Graylog!
 <br><br>
 Great! You made it with the install. <br><br>
@@ -239,4 +243,4 @@ For further exploration: <br>
 <br>
 Let me know if you run into any challenges on the way.
 <HR>
-Abby Eeninwkinkel 2023 
+Abby Eeninkwinkel 2023 
