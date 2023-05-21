@@ -6,13 +6,11 @@ Disclaimer: This is a walkthrough handson demo. You must make you own judgement 
 <br>
 <img src="web_assets/Overview_01.png">
 <br>
-What you need to set up and get running before following along the hands-on demo.
+What you need to set up and get running before following along the hands-on demo.<br>
+<br>
 1. All demo's are in a virtual Linux environment. 
-For WIndows: use WSL with Ubuntu. 
-We'll Ubuntu 22.04.2 LTS.
-4096MB
-2 CPU 
-25GB disk
+For WIndows: use WSL with Ubuntu. <br>
+We'll a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a 25GB disk.<br>
 
 2. Make sure git is installed
 ```
@@ -25,12 +23,54 @@ Find the http link on this page.<br>
 git clone <https://.....>
 ```
 
-4. Install docker  
+4. Install a typof docker 
 https://docs.docker.com/engine/install/ubuntu/
-Make sure:  docker run hello-world:latest runs.
+<br>
+Note here: While docker-compose is open source, docker (c) is not. <br> 
+In a commercial environment you'll need to check your required license for Docker (c)<br>
+To be sure we'll now use podman.<br>
+```
+sudo apt install podman
+```
+Make sure everything works:
+```
+sudo docker run hello-world:latest
+or
+podman run hello-world:latest
+```
+
 5. Install docker-compose
+```
+sudo apt install docker-compose
+```
+Make sure it works:
+Create a folder test and create a file there called docker-compose.yml
+Contents:
+```
+version: '2'
+services:
+  hello_world:
+    image: ubuntu
+    command: [/bin/echo, 'Hello world']
 
+```
+In the same folder run:
+```
+sudo docker-compose up
+```
+The expected output:
 
+```
+Creating test_hello_world_1 ... done
+Attaching to test_hello_world_1
+hello_world_1  | Hello world
+test_hello_world_1 exited with code 0
+```
+Run to clean up:
+```
+sudo docker-compose down
+```
+Make sure you understand what is happening!
 
 <b>Fluent build and install</b>
 
