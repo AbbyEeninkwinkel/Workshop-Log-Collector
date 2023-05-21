@@ -8,36 +8,41 @@ Disclaimer: This is a walkthrough hands-on demo for experts. You must make you o
 <br>
 <br>
 This page will help you get started fast. <br>
-We'll get the following set-up and running before following along the hands-on demo:<br>
+We'll get the following up and running before following along the hands-on demo:<br>
 - 1 Linux Ubuntu VM
 - installed git
 - installed and tested podman
 - clone this repo
 - installed and tested docker-compose 
 - clone, build, run and test fluentbit
-- Launch Graylog, MongoDB and Elastic Search
+- launch Graylog, MongoDB and Elastic Search
 
 1. All demo's are in a virtual Linux environment. 
+
 For WIndows: use WSL with Ubuntu. <br>
 We'll use a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
 
 2. Make sure git is installed
+
 ```
 sudo apt install git
 ```
 
 3. Clone this repo<br>
+
 Find the http link on this page.<br> 
 ```
 git clone <https://.....>
 ```
 
 4. Install a container platform<br> 
+<br>
+
 https://docs.docker.com/engine/install/ubuntu/
 <br>
 Note: While docker-compose is open source, Docker (c) is not. <br> 
-In a commercial environments you'll need to check your required license for Docker (c)<br>
-To be sure we'll now use podman.<br>
+In a commercial environment you'll need to check your required license for Docker (c).<br>
+To be sure we'll now use open source podman.<br>
 
 ```
 sudo apt install podman
@@ -46,13 +51,14 @@ sudo apt install podman
 Make sure everything works:
 
 ```
-sudo docker run hello-world:latest
-or
 podman run hello-world:latest
+or
+sudo docker run hello-world:latest
 ```
 
 5. Install docker-compose<br>
-We'll require Docker Compsoe to deploy de Graylog environment in a pretty easy way.<br>
+
+We'll require Docker Compsoe to deploy the Graylog environment in a pretty easy way.<br>
 The Ubuntu repository contains docker-composer but it's quite outdated.<br>
 <br>
 We'll go for a newer version.<br>
