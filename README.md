@@ -2,16 +2,25 @@ Hi!<br>
 <br> 
 This repo supports a handson training on configuring a log collector and SIEM.<br>
 <br>
-Disclaimer: This is a walkthrough handson demo. You must make you own judgement about safely instally and running code download from the web. <br>
+Disclaimer: This is a walkthrough handson demo. You must make you own judgement about safely instally and running code downloaded from the web. <br>
 <br>
 <img src="web_assets/Overview_01.png">
 <br>
 <br>
-What you need to set up and get running before following along the hands-on demo.<br>
+This page will help you get started fast. <br>
+We'll get the following set-up and running before following along the hands-on demo:<br>
+- 1 linux Ubuntu VM
+- installed git
+- installed and tested podman
+- clone this repo
+- installed and tested docker-compose 
+- clone, build, run and test fluentbit
+- Launch Graylog, MongoDB and Elastic Search
+
 <br>
 1. All demo's are in a virtual Linux environment. 
 For WIndows: use WSL with Ubuntu. <br>
-We'll a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a 25GB disk.<br>
+We'll a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
 
 2. Make sure git is installed
 ```
@@ -187,7 +196,7 @@ http://localhost:7555/gettingstarted
 ```
 <br>
 You're made it with the install.   <br>
-Read our logcollectors on our comapany sites <br>
+Read the documenten on our logcollectors on our comapany sites <br>
 <br>
 <HR>
 Abby Eeninwkinkel 2013 
