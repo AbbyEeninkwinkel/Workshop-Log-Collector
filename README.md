@@ -62,6 +62,7 @@ We'll require Docker Compose to deploy the Graylog environment in a pretty easy 
 The Ubuntu repository contains docker-composer but it's quite outdated.<br>
 <br>
 We'll go for a newer version.<br>
+(Short cut: with the docker-compose version in Ubuntu you'll be fine for the demo: sudo apt install docker-compose)<br>
 Note: For production systems I don't recommend to add docker pgp repositories to apt for many reasons one being that you don't want logging systems to be compromised by wrong deployments or new releases with changed functionality. <br>
 Anyway as always "it depends".<br>
 For now we'll get a fixed version. <br> 
@@ -163,7 +164,7 @@ $ make
 Skip the "make install" step <b>
 We'll might demonstrate this with Ansible, later on. <br>
 <br>
-Copy the fluent-bit binary you just made to the repo folder where you clone this repository.
+Copy the fluent-bit binary you just made to the repo folder where you cloned this repository.
 
 ```
 cp ~/fluent-bit/build/bin/fluent-bit ~/Workshop-Log-Collector/repo/
@@ -219,8 +220,8 @@ If all goes well you'll find the login of Graylog with a browser at <br>
 ```
 http://localhost:7555/gettingstarted
 ```
-Tip: If the network of the VM is bridged with th host the webbrowser may be that of the host. <br>
-Note: This version does not maintain settings you make in Graylog!
+Tip: If the network of the VM is bridged with the host the webbrowser may be that of the host. <br>
+Note: This version does not retain settings you make in Graylog!
 <br><br>
 Great! You made it with the install. <br><br>
 
