@@ -9,7 +9,7 @@ Disclaimer: This is a walkthrough handson demo. You must make you own judgement 
 <br>
 This page will help you get started fast. <br>
 We'll get the following set-up and running before following along the hands-on demo:<br>
-- 1 linux Ubuntu VM
+- 1 Linux Ubuntu VM
 - installed git
 - installed and tested podman
 - clone this repo
@@ -18,9 +18,10 @@ We'll get the following set-up and running before following along the hands-on d
 - Launch Graylog, MongoDB and Elastic Search
 
 <br>
+
 1. All demo's are in a virtual Linux environment. 
 For WIndows: use WSL with Ubuntu. <br>
-We'll a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
+We'll use a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
 
 2. Make sure git is installed
 ```
@@ -113,6 +114,7 @@ See this nice tutorial:<br>
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04#step-1-installing-docker-compose
 <br>
 <br>
+
 6. Fluent build and install</b>
 Basically we'll follow https://docs.fluentbit.io/manual/installation/sources/build-and-install <br>
 
