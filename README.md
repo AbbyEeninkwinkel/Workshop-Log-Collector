@@ -197,8 +197,11 @@ If all goes well you'll find the login of Graylog with a browser at <br>
 http://localhost:7555/gettingstarted
 ```
 <br>
-You're made it with the install.   <br>
-Read the documenten on our logcollectors on our comapany sites <br>
+Great! You made it with the install.   <br>
+For further exploration: <br>
+- Read the documents on our logcollectors on our comapany sites <br>
+- Read the FluentBit website <br>
+- Maybe even get the thing logging :) <br>
 <br>
 <HR>
 Abby Eeninwkinkel 2013 
