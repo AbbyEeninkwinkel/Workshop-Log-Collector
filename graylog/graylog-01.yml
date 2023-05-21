@@ -1,0 +1,61 @@
+version: '2'
+services:
+  # MongoDB: https://hub.docker.com/_/mongo/
+  mongodb:
+    image: mongo:5.0.0
+  # Elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/6.6/docker.html
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2
+    environment:
+      - http.host=0.0.0.0
+      - TZ=Europe/Amsterdam
+      - transport.host=localhost
+      - network.host=0.0.0.0
+      - node.max_local_storage_nodes=4
+      - "ES_JAVA_OPTS=-Xms512m -Xmx1024m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+  # Graylog: https://hub.docker.com/r/graylog/graylog/
+  graylog:
+    image: graylog/graylog:5.0.1
+    user: 1100:1100
+#    container_name: graylog
+    environment:
+      # CHANGE ME (must be at least 16 characters)!
+      - GRAYLOG_PASSWORD_SECRET=forpasswordencryption
+      # Password: admin
+      - TZ=Europe/Amsterdam
+#      - GRAYLOG_ROOT_TIMEZONE=UTC
+      - GRAYLOG_ROOT_TIMEZONE=Europe/Amsterdam
+      - GRAYLOG_ROOT_PASSWORD_SHA2=3caa4ecb66975caabf9810540eebca0bd830e8df6fba97574cda3cf6a2505bd0
+      - GRAYLOG_HTTP_BIND_ADDRESS=0.0.0.0:7555
+      - GRAYLOG_HTTP_EXTERNAL_URI=http://192.168.10.152:7555/
+      - GRAYLOG_TRANSPORT_EMAIL_WEB_INTERFACE_URL=http://192.168.10.152:7555
+      - GRAYLOG_TRANSPORT_EMAIL_HOSTNAME=smtp.example.com
+      - GRAYLOG_TRANSPORT_EMAIL_ENABLED=true
+      - GRAYLOG_TRANSPORT_EMAIL_PORT=25
+      - GRAYLOG_TRANSPORT_EMAIL_USE_AUTH=false
+      - GRAYLOG_TRANSPORT_EMAIL_USE_TLS=false
+      - GRAYLOG_TRANSPORT_EMAIL_USE_SSL=false
+      - GRAYLOG_TRANSPORT_FROM_EMAIL=youremail@yourdomain.com
+      - GRAYLOG_TRANSPORT_SUBJECT_PREFIX=[graylog]
+    links:
+      - mongodb:mongo
+      - elasticsearch
+    depends_on:
+      - mongodb
+      - elasticsearch
+    ports:
+      # Graylog web interface and REST API: 
+      - 7555:7555
+      # Syslog TCP
+      - 8514:8514
+      # Syslog UDP
+      - 8514:8514/udp
+      # GELF TCP
+      - 12201:12201
+      # GELF UDP
+      - 12201:12201/udp
