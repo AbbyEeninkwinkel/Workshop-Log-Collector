@@ -17,8 +17,6 @@ We'll get the following set-up and running before following along the hands-on d
 - clone, build, run and test fluentbit
 - Launch Graylog, MongoDB and Elastic Search
 
-<br>
-
 1. All demo's are in a virtual Linux environment. 
 For WIndows: use WSL with Ubuntu. <br>
 We'll use a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
@@ -28,13 +26,13 @@ We'll use a Ubuntu 22.04.2 LTS VM with 4096MB mem, 2 CPU on a minimum 25GB disk.
 sudo apt install git
 ```
 
-3. Clone this repo
+3. Clone this repo<br>
 Find the http link on this page.<br> 
 ```
 git clone <https://.....>
 ```
 
-4. Install a typof docker 
+4. Install a container platform<br> 
 https://docs.docker.com/engine/install/ubuntu/
 <br>
 Note: While docker-compose is open source, Docker (c) is not. <br> 
@@ -53,14 +51,15 @@ or
 podman run hello-world:latest
 ```
 
-5. Install docker-compose
-We'll require Docker Compsoe to deploy de Graylog environment in a pretty an easy way.<br>
-The Ubuntu repository contains docker-composer but it's quite outdated so we'll get the latest<br>
+5. Install docker-compose<br>
+We'll require Docker Compsoe to deploy de Graylog environment in a pretty easy way.<br>
+The Ubuntu repository contains docker-composer but it's quite outdated.<br>
 <br>
 We'll go for a newer version.<br>
-For poduction systems I don't recommend add docker pgp repositories to apt for many reasons one being thay you don't want logging systems to be compromised by wrong deployments or potentially buggy new releases. Anyway as alway it depends.<br>
+Note: For poduction systems I don't recommend to add docker pgp repositories to apt for many reasons one being that you don't want logging systems to be compromised by wrong deployments or new releases with changed functionality. >br>Anyway as allways "it depends".<br>
 For now we'll get a fixed version. <br> 
 Check https://github.com/docker/compose/releases for a recent version.<br>
+
 ```
 mkdir -p ~/.docker/cli-plugins
 chmod 700 ~/.docker/cli-plugins
@@ -75,13 +74,17 @@ echo 'PATH=$PATH:~/.docker/cli-plugins/' >> ~/.bashrc
 cd ~
 docker-compose -v
 ```
+
 You should see:<br>
+
 ```
 Docker Compose version v2.17.3
 ```
+
 Make sure it works:<br>
 Create a folder test and create a file there called docker-compose.yml<br>
 Contents:
+
 ```
 version: '2'
 services:
@@ -89,10 +92,13 @@ services:
     image: ubuntu
     command: [/bin/echo, 'Hello world']
 ```
+
 In the same folder run:
+
 ```
 sudo docker-compose up
 ```
+
 The expected output:
 
 ```
@@ -103,10 +109,13 @@ Attaching to test_hello_world_1
 hello_world_1  | Hello world
 test_hello_world_1 exited with code 0
 ```
+
 Run to clean up:
+
 ```
 sudo docker-compose down
 ```
+
 Make sure you understand what is happening!<br>
 <br>
 Play with docker-compose and get a demo website running.<br>
@@ -133,30 +142,34 @@ sudo apt -y install g++
 ``` 
 
 Clone the Fluentbit repo:
+
 ```
  git clone https://github.com/fluent/fluent-bit
 ```
-`` 
+
+``` 
 $ cd build
 $ make
 ```
-Skip the "make install" step <b>
-We'll maybe demonstrate this with Ansible, later on. <br>
-<br>
 
+Skip the "make install" step <b>
+We'll might demonstrate this with Ansible, later on. <br>
+<br>
 Copy the fluent-bit binary you jsut made to to the repo folder wher eyoud this repository.
 
 ```
 cp ~/fluent-bit/build/bin/fluent-bit ~/Workshop-Log-Collector/repo/
 ```
 
-
 6.2. Make sure fluent-bit is runable
+
 ``` 
 cd ~/Workshop_Log_Collector/repo/
 ./fluent-bit
 ```
+
 The output should be something like this:
+
 ```
 Fluent Bit v2.1.3
 ** Copyright (C) 2015-2022 The Fluent Bit Authors
@@ -188,16 +201,20 @@ e.g
 ```
 
 Launch the graylog environment
+
 ```
 sudo docker-compose -f graylog-01.yml
 ```
+
 If all goes well you'll find the login of Graylog with a browser at <br>
 
 ```
 http://localhost:7555/gettingstarted
 ```
-<br>
-Great! You made it with the install.   <br>
+Tip: If the netrwork of the VM is bridged The webbrowser may be that of the host. <br>
+Note: This version does not maintain setting you make in Graylog!
+<br><br>
+Great! You made it with the install. <br>
 For further exploration: <br>
 - Read the documents on our logcollectors on our comapany sites <br>
 - Read the FluentBit website <br>
