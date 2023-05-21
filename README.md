@@ -193,7 +193,7 @@ Fluent Bit v2.1.3
 [2023/05/15 21:20:07] [ info] [sp] stream processor started<br>
 ```
 
-Ctlr-C wil stop her. <br>
+Ctlr-C will stop her. <br>
 
 7. Almost ready! Let get Graylog running
 
