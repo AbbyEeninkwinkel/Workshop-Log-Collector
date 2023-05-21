@@ -58,11 +58,12 @@ sudo docker run hello-world:latest
 
 5. Install docker-compose<br>
 
-We'll require Docker Compsoe to deploy the Graylog environment in a pretty easy way.<br>
+We'll require Docker Compose to deploy the Graylog environment in a pretty easy way.<br>
 The Ubuntu repository contains docker-composer but it's quite outdated.<br>
 <br>
 We'll go for a newer version.<br>
-Note: For poduction systems I don't recommend to add docker pgp repositories to apt for many reasons one being that you don't want logging systems to be compromised by wrong deployments or new releases with changed functionality. >br>Anyway as allways "it depends".<br>
+Note: For production systems I don't recommend to add docker pgp repositories to apt for many reasons one being that you don't want logging systems to be compromised by wrong deployments or new releases with changed functionality. <br>
+Anyway as always "it depends".<br>
 For now we'll get a fixed version. <br> 
 Check https://github.com/docker/compose/releases for a recent version.<br>
 
@@ -116,7 +117,7 @@ hello_world_1  | Hello world
 test_hello_world_1 exited with code 0
 ```
 
-Run to clean up:
+Run this to clean up:
 
 ```
 sudo docker-compose down
@@ -131,6 +132,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 <br>
 
 6. Fluent build and install</b>
+
 Basically we'll follow https://docs.fluentbit.io/manual/installation/sources/build-and-install <br>
 
 6.1. Install all build tools and requirements.
