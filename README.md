@@ -220,5 +220,6 @@ For further exploration: <br>
 - Read the FluentBit website <br>
 - Maybe even get the thing logging :) <br>
 <br>
+Let me know if you run into any challenges on the way.
 <HR>
 Abby Eeninwkinkel 2013 
