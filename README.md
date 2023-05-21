@@ -62,7 +62,7 @@ We'll require Docker Compose to deploy the Graylog environment in a pretty easy 
 The Ubuntu repository contains docker-composer but it's quite outdated.<br>
 <br>
 We'll go for a newer version.<br>
-(Short cut: with the docker-compose version in Ubuntu you'll be fine for the demo: sudo apt install docker-compose)<br>
+(Short cut: with the docker-compose version in Ubuntu you'll probably be fine for the demo: sudo apt install docker-compose)<br>
 Note: For production systems I don't recommend to add docker pgp repositories to apt for many reasons one being that you don't want logging systems to be compromised by wrong deployments or new releases with changed functionality. <br>
 Anyway as always "it depends".<br>
 For now we'll get a fixed version. <br> 
