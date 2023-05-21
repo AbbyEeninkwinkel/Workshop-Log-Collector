@@ -163,7 +163,7 @@ $ make
 Skip the "make install" step <b>
 We'll might demonstrate this with Ansible, later on. <br>
 <br>
-Copy the fluent-bit binary you jsut made to to the repo folder wher eyoud this repository.
+Copy the fluent-bit binary you just made to the repo folder where you clone this repository.
 
 ```
 cp ~/fluent-bit/build/bin/fluent-bit ~/Workshop-Log-Collector/repo/
@@ -219,12 +219,12 @@ If all goes well you'll find the login of Graylog with a browser at <br>
 ```
 http://localhost:7555/gettingstarted
 ```
-Tip: If the netrwork of the VM is bridged The webbrowser may be that of the host. <br>
-Note: This version does not maintain setting you make in Graylog!
+Tip: If the network of the VM is bridged with th host the webbrowser may be that of the host. <br>
+Note: This version does not maintain settings you make in Graylog!
 <br><br>
-Great! You made it with the install. <br>
+Great! You made it with the install. <br><br>
 For further exploration: <br>
-- Read the documents on our logcollectors on our comapany sites <br>
+- Read the documents on our logcollectors on our company sites <br>
 - Read the FluentBit website <br>
 - Maybe even get the thing logging :) <br>
 <br>
