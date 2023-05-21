@@ -44,11 +44,31 @@ podman run hello-world:latest
 ```
 
 5. Install docker-compose
-
+We'll require Docker Compsoe to deploy de Graylog environment in a pretty an easy way.<br>
+The Ubuntu repository contains docker-composer but it's quite outdated so we'll get the latest<br>
+<br>
+We'll go for a newer version.<br>
+For poduction systems I don't recommend add docker pgp repositories to apt for many reasons one being thay you don't want logging systems to be compromised by wrong deployments or potentially buggy new releases. Anyway as alway it depends.<br>
+For now we'll get a fixed version. <br> 
+Check https://github.com/docker/compose/releases for a recent version.<br>
 ```
-sudo apt install docker-compose
-```
+mkdir -p ~/.docker/cli-plugins
+chmod 700 ~/.docker/cli-plugins
+# X86 platform
+curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o ~/.docker/
+cli-plugins/docker-compose
+# Apple M1 platform
+curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-aarch64 -o ~/.docker/cli-plugins/docker-compose
 
+chmod 700 ~/.docker/cli-plugins/docker-compose
+echo 'PATH=$PATH:~/.docker/cli-plugins/' >> ~/.bashrc
+cd ~
+docker-compose -v
+```
+You should see:<br>
+```
+Docker Compose version v2.17.3
+```
 Make sure it works:<br>
 Create a folder test and create a file there called docker-compose.yml<br>
 Contents:
@@ -77,11 +97,17 @@ Run to clean up:
 ```
 sudo docker-compose down
 ```
-Make sure you understand what is happening!
+Make sure you understand what is happening!<br>
+<br>
+Play with docker-compose and get a demo website running.<br>
+See this nice tutorial:<br>
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04#step-1-installing-docker-compose
+<br>
+<br>
+6. Fluent build and install</b>
+Basically we'll follow https://docs.fluentbit.io/manual/installation/sources/build-and-install <br>
 
-<b>Fluent build and install</b>
-
-1. Install all build tools and requirements.
+6.1. Install all build tools and requirements.
 
 ``` 
 sudo apt update
@@ -104,7 +130,7 @@ $ cd build
 $ make
 ```
 Skip the "make install" step <b>
-We'll demonstrate this with Ansible, later on. <br>
+We'll maybe demonstrate this with Ansible, later on. <br>
 <br>
 
 Copy the fluent-bit binary you jsut made to to the repo folder wher eyoud this repository.
@@ -114,7 +140,7 @@ cp ~/fluent-bit/build/bin/fluent-bit ~/Workshop-Log-Collector/repo/
 ```
 
 
-2. Make sure fluent-bit is runable
+6.2. Make sure fluent-bit is runable
 ``` 
 cd ~/Workshop_Log_Collector/repo/
 ./fluent-bit
@@ -132,55 +158,36 @@ Fluent Bit v2.1.3
 ...[2023/05/15 21:20:07] [ info] [ctraces ] version=0.3.0<br>
 [2023/05/15 21:20:07] [ info] [sp] stream processor started<br>
 ```
-Ctlr-C wil stop her.
 
+Ctlr-C wil stop her. <br>
 
+7. Almost ready! Let get Graylog running
 
+Creates you own Admin password:
 
-
-https://docs.fluentbit.io/manual/installation/sources/build-and-install
-
-Fluent Bit v2.1.3
-
-
-
-<b> Install Docker compose </b>
-We'll require Docker Compsoe to deploy de Graylog environment in a pretty an easy way.<br>
-The Ubuntu repository contains docker-composer but it's quite outdated so we'll get the latest<br>
-<br>
-We'll go for a newer version.<br>
-For poduction systems I don't recommend add docker pgp repositories to apt for many reasons one being thay you don't want logging systems to be compromised by wrong deployments or potentially buggy new releases. Anyway as alway it depends.<br>
-For now we'll get a fixed version. <br> 
-Check https://github.com/docker/compose/releases for a recent version.<br>
 ```
-mkdir -p ~/.docker/cli-plugins
-chmod 700 ~/.docker/cli-plugins
-# X86 platform
-curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o ~/.docker/
-cli-plugins/docker-compose
-# Apple M1 platform
-curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-aarch64 -o ~/.docker/cli-plugins/docker-compose
+echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
+```
 
-chmod 700 ~/.docker/cli-plugins/docker-compose
-echo 'PATH=$PATH:~/.docker/cli-plugins/' >> ~/.bashrc
-cd ~
-docker-compose -v
+Locate the GRAYLOG_ROOT_PASSWORD_SHA2 ENV variable in the graylog-01.yml file and change the hash:
+
 ```
-You should see:<br>
+e.g
+      - GRAYLOG_ROOT_PASSWORD_SHA2=3caa4ecb66975caabf9810540eebca0bd830e8df6fba97574cda3cf6a2505bd0
 ```
-Docker Compose version v2.17.3
+
+Launch the graylog environment
+```
+sudo docker-compose -f graylog-01.yml
+```
+If all goes well you'll find the login of Graylog with a browser at <br>
+
+```
+http://localhost:7555/gettingstarted
 ```
 <br>
-Play with docker-compose and get a demo website running.<br>
-See this nice tutorial:<br>
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04#step-1-installing-docker-compose
+You're made it with the install.   <br>
+Read our logcollectors on our comapany sites <br>
 <br>
-
-
-
-
-
-
-
-
-
+<HR>
+Abby Eeninwkinkel 2013 
