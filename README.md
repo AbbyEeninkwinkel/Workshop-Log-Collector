@@ -26,13 +26,16 @@ git clone <https://.....>
 4. Install a typof docker 
 https://docs.docker.com/engine/install/ubuntu/
 <br>
-Note here: While docker-compose is open source, docker (c) is not. <br> 
-In a commercial environment you'll need to check your required license for Docker (c)<br>
+Note: While docker-compose is open source, Docker (c) is not. <br> 
+In a commercial environments you'll need to check your required license for Docker (c)<br>
 To be sure we'll now use podman.<br>
+
 ```
 sudo apt install podman
 ```
+
 Make sure everything works:
+
 ```
 sudo docker run hello-world:latest
 or
@@ -40,9 +43,11 @@ podman run hello-world:latest
 ```
 
 5. Install docker-compose
+
 ```
 sudo apt install docker-compose
 ```
+
 Make sure it works:
 Create a folder test and create a file there called docker-compose.yml
 Contents:
