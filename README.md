@@ -6,6 +6,7 @@ Disclaimer: This is a walkthrough handson demo. You must make you own judgement 
 <br>
 <img src="web_assets/Overview_01.png">
 <br>
+<br>
 What you need to set up and get running before following along the hands-on demo.<br>
 <br>
 1. All demo's are in a virtual Linux environment. 
@@ -48,8 +49,8 @@ podman run hello-world:latest
 sudo apt install docker-compose
 ```
 
-Make sure it works:
-Create a folder test and create a file there called docker-compose.yml
+Make sure it works:<br>
+Create a folder test and create a file there called docker-compose.yml<br>
 Contents:
 ```
 version: '2'
@@ -57,7 +58,6 @@ services:
   hello_world:
     image: ubuntu
     command: [/bin/echo, 'Hello world']
-
 ```
 In the same folder run:
 ```
@@ -66,6 +66,8 @@ sudo docker-compose up
 The expected output:
 
 ```
+...
+...
 Creating test_hello_world_1 ... done
 Attaching to test_hello_world_1
 hello_world_1  | Hello world
