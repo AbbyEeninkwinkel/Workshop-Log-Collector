@@ -1,6 +1,8 @@
 Hi!<br>
 <br> 
 This repo supports a hands-on demo on configuring a simple log collector and SIEM.<br>
+New:<br>
+- Create Ansible user chapter 8 <br>
 <br>
 Disclaimer: This is a walkthrough hands-on demo for experts. You must make you own judgement about safely instally and running code downloaded from the web. The supplied yml files are NOT secure enough for production systems. I am not responsible for any damage to systems belonging to you or to others.<br>
 <br>
@@ -235,6 +237,20 @@ Great! You made it with the install. <br><br>
 If we have time left we'll use ansible to deploy the logcollector to the VM.<br>
 Install Ansible on host and create ansible user on the VM.<br>
 <br>
+```
+On the VM setup Ansible user with ssh access (note: we'll not create a password):
+sudo -i
+useradd ansible
+usermod -aG sudo ansible
+mkdir -p /home/ansible/.ssh
+chmod 700 /home/ansible/.ssh
+vi /home/ansible/.ssh/authorized_keys
+<paste your pub key> 
+chmod 600  /home/ansible/.ssh/authorized_keys
+chown -R ansible:ansible /home/ansible
+```
+
+
 
 For further exploration: <br>
 - Read the documents on our logcollectors on our company sites <br>
