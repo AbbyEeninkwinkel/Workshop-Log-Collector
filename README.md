@@ -11,7 +11,7 @@ Disclaimer: This is a walkthrough hands-on demo for experts. You must make you o
 <br>
 This page will help you get started fast. <br>
 We'll get the following up and running before following along the hands-on demo:<br>
-- 1 Linux Ubuntu VM
+- 1 Linux Ubuntu Desktop VM
 - install git
 - install and test podman
 - clone this rep
@@ -22,7 +22,7 @@ We'll get the following up and running before following along the hands-on demo:
 1. All demo's are in a virtual Linux environment. 
 
 For Windows: use WSL with Ubuntu. <br>
-We'll use an Ubuntu 22.04.2 LTS images based VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
+We'll use an Ubuntu 22.04.2 LTS Desktop image based VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
 
 2. Make sure git is installed
 
