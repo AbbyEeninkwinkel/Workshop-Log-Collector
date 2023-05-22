@@ -237,6 +237,7 @@ Great! You made it with the install. <br><br>
 If we have time left we'll use ansible to deploy the logcollector to the VM.<br>
 Install Ansible on host and create ansible user on the VM.<br>
 <br>
+
 ```
 On the VM setup Ansible user with ssh access (note: we'll not create a password):
 sudo -i
@@ -250,6 +251,11 @@ chmod 600  /home/ansible/.ssh/authorized_keys
 chown -R ansible:ansible /home/ansible
 ```
 
+Check if you can login to VM without password:
+
+```
+ssh ansible@<vm IP (bridged mode)>
+```
 
 
 For further exploration: <br>
