@@ -2,7 +2,9 @@ Hi!<br>
 <br> 
 This repo supports a hands-on demo on configuring a simple log collector and SIEM.<br>
 New:<br>
-- Create Ansible user chapter 8 <br>
+- Create Ansible user chapter 8 
+- Added openssh-server instruction
+<br>
 <br>
 Disclaimer: This is a walkthrough hands-on demo for experts. You must make you own judgement about safely instally and running code downloaded from the web. The supplied yml files are NOT secure enough for production systems. I am not responsible for any damage to systems belonging to you or to others.<br>
 <br>
@@ -24,10 +26,16 @@ We'll get the following up and running before following along the hands-on demo:
 For Windows: use WSL with Ubuntu. <br>
 We'll use an Ubuntu 22.04.2 LTS Desktop image based VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
 
-2. Make sure git is installed
+1.1. Make sure openssh-server is installed on the VM:
 
 ```
 sudo apt update
+sudo apt install openssh-server
+```
+
+2. Make sure git is installed
+
+```
 sudo apt install git
 ```
 
