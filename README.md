@@ -49,10 +49,7 @@ git clone <https://.....>
 
 #### 4. Install a container platform<br> 
 <br>
-
-https://docs.docker.com/engine/install/ubuntu/
-<br>
-Note: While docker-compose is open source, Docker (c) is not. <br> 
+While docker-compose is open source, Docker (c) is not. <br> 
 In a commercial environment you'll need to check your required license for Docker (c).<br>
 To be sure we'll now use open source podman.<br>
 
