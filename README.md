@@ -276,7 +276,7 @@ Check if you can login to VM without password:
 ssh ansible@<vm IP (bridged mode)>
 ```
 
-<br><br>
+<br>
 Great! You made it with the install. <br><br>
 
 For further exploration: <br>
