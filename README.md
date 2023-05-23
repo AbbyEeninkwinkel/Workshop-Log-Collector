@@ -230,7 +230,7 @@ e.g
       - GRAYLOG_ROOT_PASSWORD_SHA2=3caa4ecb66975caabf9810540eebca0bd830e8df6fba97574cda3cf6a2505bd0
 ```
 
-Launch the graylog environment
+Launch the Graylog/Elastic environment.
 
 ```
 sudo docker-compose -f graylog-01.yml up
