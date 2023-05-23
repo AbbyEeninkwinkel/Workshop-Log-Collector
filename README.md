@@ -27,7 +27,7 @@ We'll get the following up and running before following along the hands-on demo:
 For Windows: use WSL with Ubuntu. <br>
 We'll use an Ubuntu 22.04.2 LTS Desktop image based VM with 8GB mem (or min 4GB), 2 CPU on a minimum 25GB disk.<br>
 
-1. Make sure openssh-server is installed on the VM:
+### 1. Make sure openssh-server is installed on the VM:
 
 ```
 sudo apt update
