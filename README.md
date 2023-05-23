@@ -83,18 +83,12 @@ For now we'll get a fixed version. <br>
 Check https://github.com/docker/compose/releases for a recent version.<br>
 
 ```
-mkdir -p ~/.docker/cli-plugins
-chmod 700 ~/.docker/cli-plugins
 # X86 platform
-curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o ~/.docker/
-cli-plugins/docker-compose
+curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 # Apple M1 platform
-curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-aarch64 -o ~/.docker/cli-plugins/docker-compose
-
-chmod 700 ~/.docker/cli-plugins/docker-compose
-echo 'PATH=$PATH:~/.docker/cli-plugins/' >> ~/.bashrc
+curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose
+chmod 700 /usr/local/bin/docker-compose
 . ~/.bashrc
-sudo cp docker-compose /usr/local/bin
 cd ~
 docker-compose -v
 ```
