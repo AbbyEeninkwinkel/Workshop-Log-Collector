@@ -34,20 +34,20 @@ sudo apt update
 sudo apt install openssh-server
 ```
 
-2. Make sure curl and git are installed
+#### 2. Make sure curl and git are installed
 
 ```
 sudo apt install curl git
 ```
 
-3. Clone this repo<br>
+#### 3. Clone this repo<br>
 
 Find the http link on this page.<br> 
 ```
 git clone <https://.....>
 ```
 
-4. Install a container platform<br> 
+#### 4. Install a container platform<br> 
 <br>
 
 https://docs.docker.com/engine/install/ubuntu/
@@ -69,7 +69,7 @@ or
 sudo docker run hello-world:latest
 ```
 
-5. Install docker-compose<br>
+#### 5. Install docker-compose<br>
 
 We'll require Docker Compose to deploy the Graylog environment in a pretty easy way.<br>
 The Ubuntu repository contains docker-compose but it's quite outdated.<br>
@@ -150,7 +150,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-c
 <br>
 <br>
 
-6. Fluentbit build and install</b>
+#### 6. Fluentbit build and install</b>
 
 Basically we'll follow https://docs.fluentbit.io/manual/installation/sources/build-and-install <br>
 in the steps below.<br>
@@ -218,7 +218,7 @@ Fluent Bit v2.1.3
 
 Ctlr-C will stop her. <br>
 
-7. Almost ready! Let get Graylog running
+#### 7. Almost ready! Let get Graylog running
 
 Create you own Admin password:
 
@@ -250,7 +250,7 @@ Note 2: (warning destructive:) If you want to reset all images and volumes:  sud
 
 <br>
 
-8. Install ansible - optional - I hope to add to this part later.
+#### 8. Install ansible - optional - I hope to add to this part later.
 
 If we have time left we'll use ansible to deploy the logcollector to the VM.<br>
 Install Ansible on host and create ansible user on the VM.<br>
