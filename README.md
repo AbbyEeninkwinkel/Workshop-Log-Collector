@@ -90,6 +90,7 @@ curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-comp
 
 chmod 700 ~/.docker/cli-plugins/docker-compose
 echo 'PATH=$PATH:~/.docker/cli-plugins/' >> ~/.bashrc
+. ~/.bashrc
 cd ~
 docker-compose -v
 ```
