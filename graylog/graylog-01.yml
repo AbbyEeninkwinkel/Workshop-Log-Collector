@@ -18,6 +18,13 @@ services:
         soft: -1
         hard: -1
     mem_limit: 1g
+
+    #Warning unsafe option; for demo only
+    ports:
+      #  REST API
+      - 9200:9200
+      - 9300:9300  
+
   # Graylog: https://hub.docker.com/r/graylog/graylog/
   graylog:
     image: graylog/graylog:5.0.1
