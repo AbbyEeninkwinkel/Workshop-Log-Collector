@@ -102,6 +102,15 @@ You should see:<br>
 ```
 Docker Compose version v2.17.3
 ```
+Add docker.io as unqualified search registry:
+```
+vi /etc/containers/registries.conf
+```
+Add the following lines:
+```
+# # An array of host[:port] registries to try when pulling an unqualified image, in order.
+unqualified-search-registries = ["docker.io"]
+```
 
 Make sure it works:<br>
 Create a folder test and create a file there called docker-compose.yml<br>
