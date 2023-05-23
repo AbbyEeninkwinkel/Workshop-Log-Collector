@@ -4,6 +4,7 @@ This repo supports a hands-on demo on configuring a simple log collector and SIE
 New:<br>
 - Create Ansible user chapter 8 
 - Added openssh-server instruction
+- Added podman-docker to instructions. Thanks Hans N.! 
 <br>
 <br>
 Disclaimer: This is a walkthrough hands-on demo for experts. You must make you own judgement about safely instally and running code downloaded from the web. The supplied yml files are NOT secure enough for production systems. I am not responsible for any damage to systems belonging to you or to others.<br>
@@ -57,6 +58,7 @@ To be sure we'll now use open source podman.<br>
 
 ```
 sudo apt install podman
+sudo apt install podman-docker
 ```
 
 Make sure everything works:
