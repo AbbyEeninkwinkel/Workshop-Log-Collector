@@ -93,6 +93,7 @@ curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-comp
 chmod 700 ~/.docker/cli-plugins/docker-compose
 echo 'PATH=$PATH:~/.docker/cli-plugins/' >> ~/.bashrc
 . ~/.bashrc
+sudo cp docker-compose /usr/local/bin
 cd ~
 docker-compose -v
 ```
@@ -249,7 +250,10 @@ If all goes well you'll find the login of Graylog with a browser at <br>
 http://localhost:7555/gettingstarted
 ```
 Tip: If the network of the VM is bridged with the host, the web browser may be that of the host. <br>
-Note: This version does not retain settings you make in Graylog!
+Note 1: This version does not retain settings you make in Graylog!
+Note 2: (warning destructive:) If you want to reset all images and volumes:  sudo podman system prune -a; sudo podman volume rm -a
+
+
 <br><br>
 Great! You made it with the install. <br><br>
 
