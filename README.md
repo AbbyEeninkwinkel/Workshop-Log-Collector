@@ -176,6 +176,7 @@ Make the necessary files:<br>
 
 ``` 
 $ cd build
+$ cmake ..
 $ make
 ```
 
