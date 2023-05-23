@@ -249,9 +249,7 @@ Tip: If the network of the VM is bridged with the host, the web browser may be t
 Note 1: This version does not retain settings you make in Graylog!<br>
 Note 2: (warning destructive:) If you want to reset all images and volumes:  sudo podman system prune -a; sudo podman volume rm -a<br>
 
-
-<br><br>
-Great! You made it with the install. <br><br>
+<br>
 
 8. Install ansible - optional - I hope to add to this part later.
 
@@ -278,6 +276,8 @@ Check if you can login to VM without password:
 ssh ansible@<vm IP (bridged mode)>
 ```
 
+<br><br>
+Great! You made it with the install. <br><br>
 
 For further exploration: <br>
 - Read the documents on our logcollectors on our company sites <br>
