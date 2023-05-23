@@ -35,10 +35,10 @@ sudo apt update
 sudo apt install openssh-server
 ```
 
-2. Make sure git is installed
+2. Make sure curl and git are installed
 
 ```
-sudo apt install git
+sudo apt install curl git
 ```
 
 3. Clone this repo<br>
@@ -100,7 +100,7 @@ Docker Compose version v2.17.3
 ```
 Add docker.io as unqualified search registry:
 ```
-vi /etc/containers/registries.conf
+sudo vi /etc/containers/registries.conf
 ```
 Add the following lines:
 ```
