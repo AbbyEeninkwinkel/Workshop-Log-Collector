@@ -14,13 +14,13 @@ Disclaimer: This is a walkthrough hands-on demo for experts. You must make you o
 <br>
 This page will help you get started fast. <br>
 We'll get the following up and running before following along the hands-on demo:<br>
-- Linux Ubuntu Desktop VM
-- install git
-- install and test podman
-- clone this rep
-- install and test docker-compose 
-- clone, build, run and test fluentbit
-- launch Graylog, MongoDB and Elastic Search
+- Linux Ubuntu Desktop VM<br>
+- install git<br>
+- install and test podman<br>
+- clone this rep<br>
+- install and test docker-compose<br>
+- clone, build, run and test fluentbit<br>
+- launch Graylog, MongoDB and Elastic Search<br>
 
 ## Create a virtual Linux environment. 
 
