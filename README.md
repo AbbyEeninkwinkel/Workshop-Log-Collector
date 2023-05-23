@@ -22,7 +22,7 @@ We'll get the following up and running before following along the hands-on demo:
 - clone, build, run and test fluentbit
 - launch Graylog, MongoDB and Elastic Search
 
-## Create a virtual Linux environment. 
+##Create a virtual Linux environment. 
 
 For Windows: use WSL with Ubuntu. <br>
 We'll use an Ubuntu 22.04.2 LTS Desktop image based VM with 8GB mem (or min 4GB), 2 CPU on a minimum 25GB disk.<br>
