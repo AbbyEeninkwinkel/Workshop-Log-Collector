@@ -185,6 +185,7 @@ $ cmake ..
 $ make
 ```
 
+The "make" can take a long time depending on your CPU speed and virtualization. <br>
 Skip the "make install" step. <br>
 We'll might demonstrate this with Ansible, later on. <br>
 <br>
