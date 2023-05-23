@@ -7,7 +7,6 @@ New:<br>
 - Added podman-docker to instructions. Thanks Hans N.! 
 - Better use a 8GB for the VM 
 <br>
-<br>
 Disclaimer: This is a walkthrough hands-on demo for experts. You must make you own judgement about safely instally and running code downloaded from the web. The supplied yml files are NOT secure enough for production systems. I am not responsible for any damage to systems belonging to you or to others.<br>
 <br>
 <img src="web_assets/Overview_01.png">
