@@ -5,6 +5,7 @@ New:<br>
 - Create Ansible user chapter 8 
 - Added openssh-server instruction
 - Added podman-docker to instructions. Thanks Hans N.! 
+- Better use a 8GB for the VM 
 <br>
 <br>
 Disclaimer: This is a walkthrough hands-on demo for experts. You must make you own judgement about safely instally and running code downloaded from the web. The supplied yml files are NOT secure enough for production systems. I am not responsible for any damage to systems belonging to you or to others.<br>
@@ -25,7 +26,7 @@ We'll get the following up and running before following along the hands-on demo:
 1. All demo's are in a virtual Linux environment. 
 
 For Windows: use WSL with Ubuntu. <br>
-We'll use an Ubuntu 22.04.2 LTS Desktop image based VM with 4096MB mem, 2 CPU on a minimum 25GB disk.<br>
+We'll use an Ubuntu 22.04.2 LTS Desktop image based VM with 8GB mem (or min 4GB), 2 CPU on a minimum 25GB disk.<br>
 
 1.1. Make sure openssh-server is installed on the VM:
 
