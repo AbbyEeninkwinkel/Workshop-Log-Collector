@@ -240,7 +240,7 @@ e.g
 Launch the graylog environment
 
 ```
-sudo docker-compose -f graylog-01.yml
+sudo docker-compose -f graylog-01.yml up
 ```
 
 If all goes well you'll find the login of Graylog with a browser at <br>
