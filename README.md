@@ -2,10 +2,10 @@ Hi!<br>
 <br> 
 This repo supports a hands-on demo on configuring a simple log collector and SIEM.<br>
 New:<br>
-- Create Ansible user chapter 8 
-- Added openssh-server instruction
-- Added podman-docker to instructions. Thanks Hans N.! 
-- Better use a 8GB for the VM 
+- Create Ansible user chapter 8 <br>
+- Added openssh-server instruction  <br>
+- Added podman-docker to instructions. Thanks Hans N.! <br>
+- Better use a 8GB for the VM <br>
 <br>
 Disclaimer: This is a walkthrough hands-on demo for experts. You must make you own judgement about safely instally and running code downloaded from the web. The supplied yml files are NOT secure enough for production systems. I am not responsible for any damage to systems belonging to you or to others.<br>
 <br>
