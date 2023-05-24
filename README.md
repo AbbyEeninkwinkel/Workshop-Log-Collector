@@ -241,6 +241,20 @@ If all goes well you'll find the login of Graylog with a browser at <br>
 ```
 http://localhost:7555/gettingstarted
 ```
+If it doesn't, because you get the error that 'links' are not supported, edit the following in the graylog-01.yml:
+
+1) Rename the mongodb image to mongo.
+2) Under the graylog image, comment out or remove the following lines: 
+links:
+  - mongodb:mongo
+  - elasticsearch
+
+Now you should be able to start the Graylog/Elastic environment
+
+```
+sudo docker-compose -f graylog-01.yml up
+```
+
 Tip: If the network of the VM is bridged with the host, the web browser may be that of the host. <br>
 Note 1: This version does not retain settings you make in Graylog!<br>
 Note 2: (warning destructive:) If you want to reset all images and volumes:  sudo podman system prune -a; sudo podman volume rm -a<br>
