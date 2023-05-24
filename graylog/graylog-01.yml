@@ -53,7 +53,7 @@ services:
 #      - mongodb:mongo
 #      - elasticsearch
     depends_on:
-      - mongodb
+      - mongo
       - elasticsearch
     ports:
       # Graylog web interface and REST API: 

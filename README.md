@@ -25,6 +25,13 @@ We'll get the following up and running before following along the hands-on demo:
 ## Create a virtual Linux environment. 
 
 For Windows: use WSL with Ubuntu. <br>
+WSL users only: Make sure systemd runs. You may have to update WSL and add/write to /etc/wsl.conf the following:
+
+```
+[boot]
+systemd=true
+```
+<br>
 We'll use an Ubuntu 22.04.2 LTS Desktop image based VM with 8GB mem (or min 4GB), 2 CPU on a minimum 25GB disk.<br>
 
 #### 1. Make sure openssh-server is installed on the VM:
@@ -221,7 +228,7 @@ Ctlr-C will stop her. <br>
 #### 7. Almost ready! Let get Graylog running
 
 <br>
-Go to the Graylo folder:
+Go to the Graylog folder:
 
 ```
 cd ~/Workshop-Log-Collector/graylog
