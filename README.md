@@ -83,6 +83,9 @@ Check https://github.com/docker/compose/releases for a recent version.<br>
 curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 # Apple M1 platform
 curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose
+```
+
+```
 chmod 700 /usr/local/bin/docker-compose
 . ~/.bashrc
 cd ~
