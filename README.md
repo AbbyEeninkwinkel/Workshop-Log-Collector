@@ -197,7 +197,7 @@ cp ~/fluent-bit/build/bin/fluent-bit ~/Workshop-Log-Collector/repo/
 6.2. Make sure fluent-bit is runable
 
 ``` 
-cd ~/Workshop_Log_Collector/repo/
+cd ~/Workshop-Log-Collector/repo/
 ./fluent-bit
 ```
 
@@ -219,6 +219,13 @@ Fluent Bit v2.1.3
 Ctlr-C will stop her. <br>
 
 #### 7. Almost ready! Let get Graylog running
+
+<br>
+Go to the Graylo folder:
+
+```
+cd ~/Workshop-Log-Collector/graylog
+```
 
 Create you own Admin password:
 
