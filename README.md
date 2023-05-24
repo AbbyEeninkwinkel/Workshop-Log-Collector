@@ -84,7 +84,11 @@ Note: For production systems I don't recommend to add docker pgp repositories to
 Anyway as always "it depends".<br>
 For now we'll get a fixed version. <br> 
 Check https://github.com/docker/compose/releases for a recent version.<br>
+<br>
+Remove installed old docker-compose:
 
+```
+sudo apt remove docker-compose
 ```
 # X86 platform
 curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
