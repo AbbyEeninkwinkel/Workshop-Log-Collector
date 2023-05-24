@@ -203,6 +203,7 @@ Make the necessary files:<br>
 
 
 ``` 
+$ cd ~/fluent-bit
 $ cd build
 $ cmake ..
 $ make
