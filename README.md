@@ -147,6 +147,19 @@ hello_world_1  | Hello world
 test_hello_world_1 exited with code 0
 ```
 
+You might run in the problem that 
+
+```
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+This will most probably fix that:
+
+```
+sudo systemctl enable podman.socket
+sud0 systemctl start podman.socket
+```
+
 Run this to clean up:
 
 ```
