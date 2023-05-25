@@ -360,14 +360,14 @@ In window 1:<br>
 
 ```
 cd ~/Workshop-Log-Collector/repo
-./fluentbit -c fluent-bit_A.conf
+./fluent-bit -c fluent-bit_A.conf
 ```
 You'll get warnings/errors because fluent-bit_B is not running yet.<br>
 In Window 2:<br>
 
 ```
 cd ~/Workshop-Log-Collector/repo
-./fluentbit -c fluent-bit_B.conf
+./fluent-bit -c fluent-bit_B.conf
 ```
 <br>
 You should see data in Graylog's webpage in Search screen and by pressing the run button in right corner. 
