@@ -90,6 +90,7 @@ Remove installed old docker-compose:
 ```
 sudo apt remove docker-compose
 ```
+```
 # X86 platform
 curl -SL https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 # Apple M1 platform
