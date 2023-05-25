@@ -158,7 +158,10 @@ This will most probably fix that:
 
 ```
 sudo systemctl enable podman.socket
-sud0 systemctl start podman.socket
+sudo systemctl start podman.socket
+mv /usr/local/bin/docker-compose /bin/docker-compose
+sudo chmod uo+rx /bin/docker-compose 
+export "DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock"
 ```
 
 Run this to clean up:
@@ -311,10 +314,73 @@ ssh ansible@<vm IP (bridged mode)>
 <br>
 Great! You made it with the install. <br><br>
 
+
+#### 7. Running the whole chain (as demonstrated in hand-on)
+All config files have been added to this repo.<br>
+So let's refresh our local folder. <br>
+
+```
+cd ~/Workshop-Log-Collector/
+git pull  
+```
+
+The Fluentbit config files are in the repo folder.<br>
+As each fluentbit output to the stdio it's very neat to have a terminal with split windows to see all the output in one vie. I personnally like Terminator.<br>
+
+``` 
+sudo apt install terminator
+
+```
+Situation:<br>
+- we have logs in /var/logs which we want shipped to Graylog
+- Fluent-bit A collects the logs with a tail input and sends them to (1) stdout and (2) Fluent-bit B
+- Fleunt-bit B recieves the records from Fluent-bit A and parses them (creating keys from the message) and forwards the with GELF format to the Graylog.
+- Graylog receives the records through a GELF input and stores them in the Elastic Search database
+<br>
+Lauch the Graylog container in a separate terminal instance (if you stopped it):
+
+```
+cd ~/Workshop-Log-Collector/graylog
+export "DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+sudo docker-compose -f graylog-01.yml up
+```
+
+Log in to Graylog with a browser with you Graylog admin account.<br>
+Configure an GELF input:<br>
+<br>
+<img src="web_assets/Screenshot_GL_input.png"><br>
+<br>
+<br>
+<img src="web_assets/Screenshot_GL_input_2.png"><br>
+<br>
+<img src="web_assets/Screenshot_GL_input_3.png"><br>
+<br>
+We'll not configure TSL and other security features; It's a demo.<br>
+<br>
+Let fire up the Fluent-bits!<br>
+Switch to Terminator and split the screen. <br>
+In window 1:<br>
+
+```
+cd ~/Workshop-Log-Collector/repo
+./fluentbit -c fluent-bit_A.conf
+```
+You'll warnings because Fluent-bit_B is not running yet.<br>
+In Window 2:<br>
+
+```
+cd ~/Workshop-Log-Collector/repo
+./fluentbit -c fluent-bit_B.conf
+```
+<br>
+You should see data in Graylog's webpage in Search screen and pressing the run button in right corner. 
+<br>
+If so, Congratulation! Otherwise there some things to check... :)<br>
+<br>
+
 For further exploration: <br>
 - Read the documents on our logcollectors on our company sites <br>
 - Read the FluentBit website <br>
-- Maybe even get the thing logging :) <br>
 <br>
 Let me know if you run into any challenges on the way.
 <HR>
