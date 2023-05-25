@@ -6,6 +6,9 @@ services:
   # Elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/6.6/docker.html
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2
+# data folder in share for persistence
+#   volumes:
+#     - /home/abby/logging/elasticsearch:/usr/share/elasticsearch/data    
     environment:
       - http.host=0.0.0.0
       - TZ=Europe/Amsterdam
@@ -30,6 +33,10 @@ services:
     image: graylog/graylog:5.0.1
     user: 1100:1100
 #    container_name: graylog
+# journal and config directories in local NFS share for persistence
+#   volumes:
+#     - /home/abby/logging/graylog/journal:/usr/share/graylog/data/journal
+#     - /home/abby/logging/graylog/config:/usr/share/graylog/data/config
     environment:
       # CHANGE ME (must be at least 16 characters)!
       - GRAYLOG_PASSWORD_SECRET=forpasswordencryption
@@ -66,3 +73,4 @@ services:
       - 12201:12201
       # GELF UDP
       - 12201:12201/udp
+      
