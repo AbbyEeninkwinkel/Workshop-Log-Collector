@@ -246,7 +246,6 @@ Fluent Bit v2.1.3
 ```
 
 Ctlr-C will stop her. <br>
-
 #### 7. Almost ready! Let get Graylog running
 
 <br>
@@ -283,7 +282,6 @@ http://localhost:7555/gettingstarted
 Tip: If the network of the VM is bridged with the host, the web browser may be that of the host. <br>
 Note 1: This version does not retain settings you make in Graylog!<br>
 Note 2: (warning destructive:) If you want to reset all images and volumes:  sudo podman system prune -a; sudo podman volume rm -a<br>
-
 <br>
 
 #### 8. Install ansible - optional - I hope to add to this part later.
